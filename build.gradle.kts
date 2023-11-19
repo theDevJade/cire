@@ -9,6 +9,7 @@ plugins {
   id("org.jlleitschuh.gradle.ktlint") version "11.6.1"
   kotlin("plugin.serialization") version "1.9.0"
   kotlin("jvm") version "1.9.20"
+  `maven-publish`
   application
 }
 
@@ -20,6 +21,25 @@ description = "CIRE"
 java {
   // Configure the java toolchain. This allows gradle to auto-provision JDK 17 on systems that only have JDK 8 installed for example.
   toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+}
+
+publishing {
+  repositories {
+    maven {
+      name = "GitHubPackages"
+      url = uri("https://maven.pkg.github.com/theDevJade/cire")
+      credentials {
+        username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_ACTOR")
+        password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
+      }
+    }
+  }
+  publications {
+    create<MavenPublication>("mavenJava") {
+      from(components["java"])
+      // Add other publication details such as artifactId, groupId, version, etc.
+    }
+  }
 }
 
 repositories {
@@ -97,8 +117,7 @@ tasks {
   }
 
   reobfJar {
-    dependsOn("ktlintFormat")
-    outputJar.set(layout.buildDirectory.file("libs/$projectName-${project.version}.jar"))
+    outputJar.set(layout.buildDirectory.file("libs/$projectName.jar"))
   }
 }
 
