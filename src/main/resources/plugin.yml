@@ -1,6 +1,6 @@
 name: $name
 version: $version
-main: com.encoral.template.Encoral
+main: com.thedevjade.cire.Cire
 description: $description
 load: STARTUP
 authors:

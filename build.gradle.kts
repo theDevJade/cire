@@ -12,10 +12,10 @@ plugins {
   application
 }
 
-val projectName = "encoral-template"
-group = "com.encoral.template"
+val projectName = "cire"
+group = "com.thedevjade.cire"
 version = "1.0.0-SNAPSHOT"
-description = "Encoral template for development"
+description = "CIRE"
 
 java {
   // Configure the java toolchain. This allows gradle to auto-provision JDK 17 on systems that only have JDK 8 installed for example.
