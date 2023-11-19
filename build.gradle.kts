@@ -15,7 +15,7 @@ plugins {
 
 val projectName = "cire"
 group = "com.thedevjade.cire"
-version = "1.0.0-TEST"
+version = "1.0.0-ITEMS"
 description = "CIRE"
 
 java {
