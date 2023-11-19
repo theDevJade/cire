@@ -1,6 +1,6 @@
 # CIRE |-| Custom Item Resource Expansion
 
-![Deployment](https://github.com/theDevJade/cire/workflows/publish/badge.svg)
+![Build and Publish to GitHub Packages](https://github.com/theDevJade/cire/workflows/Build%20and%20Publish%20to%20GitHub%20Packages/badge.svg)
 
 ## Overview
 
