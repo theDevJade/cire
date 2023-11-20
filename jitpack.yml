@@ -1,2 +1,6 @@
 jdk:
   - openjdk17
+
+before_install:
+  - export JAVA_HOME=/home/jitpack/tools/jdk17
+  - $JAVA_HOME/bin/java -version
