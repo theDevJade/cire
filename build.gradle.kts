@@ -45,11 +45,7 @@ java {
   }
 }
 
-tasks.jar {
-  archiveBaseName.set("cire")
-  // Optionally, you can also set the version if needed
-  archiveVersion.set("1")
-}
+
 
 tasks.withType<JavaCompile>().configureEach {
   if (targetJavaVersion >= 10 || JavaVersion.current().isJava10Compatible) {
