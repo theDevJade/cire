@@ -10,7 +10,7 @@ plugins {
 
 val mcVersion = "1.20.2"
 group = "com.theDevJade"
-version = "1.0"
+version = "1.0-RELEASE"
 
 repositories {
   mavenCentral()
