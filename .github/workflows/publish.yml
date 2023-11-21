@@ -31,12 +31,6 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew jar
 
-      - name: Publish to GitHub Packages
-        run: ./gradlew publish
-        env:
-          GITHUB_ACTOR: ${{ github.actor }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Extract Version from Gradle Config
         run: |
           echo "VERSION=$(./gradlew properties -q | grep '^version:' | awk '{print $2}')" >> $GITHUB_ENV
