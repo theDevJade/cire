@@ -59,3 +59,7 @@ tasks.named<ProcessResources>("processResources") {
     expand(props)
   }
 }
+
+kotlin {
+  jvmToolchain(17)
+}
